@@ -9,7 +9,7 @@
     "start": "node index",
     "clean": "rm -rf dist/**",
     "build": "yarn clean && parcel build src/index.html --public-url /",
-    "serve": "serve dist"
+    "serve": "NODE_ENV=production node index"
   },
   "dependencies": {
     "create-epic-store": "^1.0.8",
