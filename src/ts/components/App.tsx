@@ -1,9 +1,19 @@
 import {h} from 'preact';
 import {connect} from 'preact-redux';
 
-function App(props) {
+function App(props, {store}) {
     return (
-        <pre><code>{JSON.stringify(props, null, 2)}</code></pre>
+        <div>
+            <button
+                type="button"
+                onClick={() => store.dispatch({type: 'load', payload: 'oops!'})}
+            >
+                Load data
+            </button>
+            {props.product && (
+                <pre><code>{JSON.stringify(props.product, null, 2)}</code></pre>
+            )}
+        </div>
     )
 }
 

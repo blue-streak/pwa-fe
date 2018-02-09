@@ -1,0 +1,26 @@
+{
+  "name": "parcel",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:blue-streak/parcel.git",
+  "author": "Shane Osbourne <shane.osbourne8@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "node index",
+    "clean": "rm -rf dist/**",
+    "build": "yarn clean && parcel build src/index.html --public-url /",
+    "serve": "serve dist"
+  },
+  "dependencies": {
+    "create-epic-store": "^1.0.8",
+    "preact": "^8.2.7",
+    "preact-redux": "^2.0.3",
+    "redux": "^3.7.2",
+    "redux-observable": "^0.18.0"
+  },
+  "devDependencies": {
+    "compression": "^1.7.1",
+    "parcel-bundler": "^1.5.1",
+    "serve-static": "^1.13.2"
+  }
+}
