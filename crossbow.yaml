@@ -1,0 +1,34 @@
+tasks:
+
+  build:
+    adaptor: npm
+    command: |
+      rm -rf dist/**
+      parcel build src/index.html --public-url /
+
+  serve:
+    adaptor: npm
+    env:
+      NODE_ENV: production
+    command: node index
+
+  render:
+    - render-clean
+    - render-ts
+    - render-output
+
+  render-clean:
+    adaptor: npm
+    command: rm -rf render/**
+
+  render-ts:
+    adaptor: npm
+    command: >
+      tsc src/render/index.tsx
+      --jsx react --jsxFactory h
+      --lib DOM,ES2015
+      --outDir render/dist
+
+  render-output:
+    adaptor: sh
+    command: node render/dist/render/index.js

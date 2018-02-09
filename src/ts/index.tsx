@@ -1,7 +1,6 @@
 import {h, render} from "preact";
 import {createEpicStore} from 'create-epic-store';
 import {Provider} from 'preact-redux';
-import {App_Connected} from './components/App';
 
 import {ajax} from 'rxjs/observable/dom/ajax';
 import "rxjs/add/operator/catch";
@@ -9,6 +8,7 @@ import "rxjs/add/operator/do";
 import "rxjs/add/operator/ignoreElements";
 import "rxjs/add/operator/switchMap";
 import "rxjs/add/operator/map";
+import {Shell} from "./Shell";
 
 const store = createEpicStore({
         main: (prev = {init: true, product: null}, action) => {
@@ -50,10 +50,11 @@ const store = createEpicStore({
     {}
 );
 
-render((
-    <div>
+
+setTimeout(() => {
+    render((
         <Provider store={store}>
-            <App_Connected />
+            <Shell title="JS Rendered" />
         </Provider>
-    </div>
-), document.querySelector('#app'));
+    ), document.querySelector('#app'), (document.querySelector('#app') as any).firstChild);
+}, 3000);

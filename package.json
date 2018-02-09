@@ -9,18 +9,25 @@
     "start": "node index",
     "clean": "rm -rf dist/**",
     "build": "yarn clean && parcel build src/index.html --public-url /",
-    "serve": "NODE_ENV=production node index"
+    "serve": "NODE_ENV=production node index",
+    "render": "yarn render:ts && yarn render:output",
+    "render:ts": "./node_modules/.bin/tsc src/render/index.tsx --jsx react --jsxFactory h",
+    "render:output": "node src/render/index.js"
   },
   "dependencies": {
-    "create-epic-store": "^1.0.8",
+    "create-epic-store": "1.0.9",
+    "dlv": "^1.1.1",
     "preact": "^8.2.7",
     "preact-redux": "^2.0.3",
+    "preact-router": "^2.6.0",
     "redux": "^3.7.2",
     "redux-observable": "^0.18.0"
   },
   "devDependencies": {
     "compression": "^1.7.1",
     "parcel-bundler": "^1.5.1",
-    "serve-static": "^1.13.2"
+    "preact-render-to-string": "^3.7.0",
+    "serve-static": "^1.13.2",
+    "typescript": "^2.7.1"
   }
 }
