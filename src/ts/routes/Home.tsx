@@ -10,15 +10,14 @@ export function Home(props, {store}) {
                 render={(main) => {
                     return (
                         <div>
-                            <button
-                                type="button"
-                                onClick={() => store.dispatch({type: 'load', payload: 'oops!'})}
-                            >
-                                Load data
-                            </button>
-                            {main.product && (
-                                <pre><code>{JSON.stringify(main.product, null, 2)}</code></pre>
-                            )}
+                            <figure class="hero" style={{paddingBottom: '64%', marginBottom: 0}}>
+                                <img src="http://ce.demo.wearejh.com/media/wysiwyg/new/new-performance.jpg" alt=""/>
+                                <a href="/" class="button hero__link">Shop Now</a>
+                            </figure>
+                            <figure class="hero" style={{paddingBottom: '64%', marginBottom: 0}}>
+                                <img src="http://ce.demo.wearejh.com/media/wysiwyg/new/new-eco.jpg" alt=""/>
+                                <a href="/" class="button hero__link">Shop Now</a>
+                            </figure>
                         </div>
                     );
                 }}

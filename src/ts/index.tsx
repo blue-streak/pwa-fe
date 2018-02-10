@@ -8,7 +8,13 @@ import "rxjs/add/operator/do";
 import "rxjs/add/operator/ignoreElements";
 import "rxjs/add/operator/switchMap";
 import "rxjs/add/operator/map";
+import "rxjs/add/operator/withLatestFrom";
+import "rxjs/add/observable/of";
 import {Shell} from "./Shell";
+import {Observable} from "rxjs/Observable";
+import {toggleMenu} from "./effects/toggleMenu.effect";
+
+const {of} = Observable;
 
 const store = createEpicStore({
         main: (prev = {init: true, product: null}, action) => {
@@ -24,6 +30,7 @@ const store = createEpicStore({
         },
     },
     [
+        toggleMenu,
         (action$) => action$
             .ofType('load')
             .switchMap(() => {
@@ -47,7 +54,9 @@ const store = createEpicStore({
                     })
             })
     ],
-    {}
+    {
+        document$: of(document)
+    }
 );
 
 
@@ -57,4 +66,4 @@ setTimeout(() => {
             <Shell title="JS Rendered" />
         </Provider>
     ), document.querySelector('#app'), (document.querySelector('#app') as any).firstChild);
-}, 3000);
+}, 1000);
