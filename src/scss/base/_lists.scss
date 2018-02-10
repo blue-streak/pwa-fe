@@ -1,0 +1,34 @@
+// Definition lists
+
+dt {
+    font-weight: bold;
+}
+
+
+dl {
+    @include clearfix();
+
+    dt {
+        clear: left;
+        float: left;
+        margin-right: $half-spacing/2;
+
+        &:after {
+            content: ": ";
+        }
+    }
+
+    dd {
+        + dt {
+            padding-top: 0;
+        }
+    }
+}
+
+ul {
+
+}
+
+li {
+
+}

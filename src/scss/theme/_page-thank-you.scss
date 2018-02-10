@@ -1,0 +1,17 @@
+.page-thank-you {
+    @include spacing;
+}
+
+.page-thank-you__container {
+    text-align: center;
+}
+
+.page-thank-you__image {
+    display: inline-block;
+    width: 100%;
+    max-width: 150px;
+
+    @include media-query (min, $lap-start) {
+        max-width: 200px;
+    }
+}

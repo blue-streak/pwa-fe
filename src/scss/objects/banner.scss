@@ -1,0 +1,49 @@
+//offline banne only for now
+.banner {
+    display: none;
+    width: 100%;
+    padding: $half-spacing 0;
+    color: $white;
+    background-color: $charcoal;
+    border: 1px solid $black;
+    @include font-size($small-font-size);
+
+    @include media-query (min, $lap-start) {
+        padding: $base-spacing 0;
+        text-align: center;
+        @include font-size($base-font-size);
+    }
+}
+
+.banner__container {
+    position: relative;
+}
+
+.banner__title {
+    font-weight: 600;
+    margin-bottom: $half-spacing/2;
+    @include font-size($base-font-size);
+
+    @include media-query (min, $lap-start) {
+        @include font-size($lede-font-size);
+        margin: 0;
+        display: inline-block;
+    }
+}
+
+.banner__message {
+    margin: 0;
+    display: inline-block;
+}
+
+.banner__icon {
+    position: relative;
+    top: -2px;
+    margin-right: 7px;
+}
+
+.offline {
+    .banner {
+        display: block;
+    }
+}

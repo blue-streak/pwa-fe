@@ -1,0 +1,131 @@
+/*================================================================================
+VISIBILITY
+================================================================================*/
+
+/**
+ * Hide from both screenreaders and browsers: h5bp.com/u
+ */
+.hidden {
+    display: none !important;
+    visibility: hidden;
+}
+
+/**
+ * Hide only visually, but have it available for screenreaders: h5bp.com/v
+ */
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+/**
+ * Extends the .visuallyhidden class to allow the element to be focusable
+ * when navigated to via the keyboard: h5bp.com/p
+ */
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+
+/**
+ * Hide visually and from screenreaders, but maintain layout
+ */
+.invisible {
+    visibility: hidden;
+}
+
+.visible {
+    display: block !important;
+    visibility: visible;
+}
+
+
+/**
+ * Breakpoint based hiding
+ */
+@include media-query(palm) {
+    .not-palm {
+        display: none !important;
+    }
+    .lap {
+        display: none !important;
+    }
+    .desk {
+        display: none !important;
+    }
+}
+
+@include media-query(lap) {
+    .palm {
+        display: none !important;
+    }
+    .not-lap {
+        display: none !important;
+    }
+    .desk {
+        display: none !important;
+    }
+}
+
+@include media-query(desk) {
+    .palm {
+        display: none !important;
+    }
+    .lap {
+        display: none !important;
+    }
+    .not-desk {
+        display: none !important;
+    }
+}
+
+.not-wide {
+    @include media-query(min, $wide-start) {
+        display: none !important;
+    }
+}
+
+.below-desk {
+    @include media-query(min, $desk-start) {
+        display: none !important;
+    }
+}
+
+.above-lap {
+    @include media-query(max, $desk-start) {
+        display: none;
+    }
+}
+
+.above-palm {
+    @include media-query(max, $lap-start) {
+        display: none;
+    }
+}
+
+/**
+ * Hacks? Lets call them overrides.
+ */
+.float--right, .fr   { float: right!important; }
+.float--left, .fl    { float: left !important; }
+
+.text--left, .a-left        { text-align: left  !important; }
+.text--center, .a-center    { text-align: center!important; }
+.text--right, .a-right      { text-align: right !important; }
+
+.text--small    { @include font-size(12px); }
+
+.heading-font {
+    font-family: $hn-font-family;
+}

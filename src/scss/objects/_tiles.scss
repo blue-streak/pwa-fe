@@ -1,0 +1,306 @@
+//====================================
+// Site Tiles
+//====================================
+
+.tiles {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.tiles__item {
+    position: relative;
+    width: 100%;
+    @include spacing;
+
+    //animations
+    &:hover {
+        transition: all ease $base-transition;
+
+        .tiles__viewport {
+            transform: scale(1.02);
+            box-shadow: 0px 10px 32px rgba($black, 0.3);
+        }
+
+        .tiles__content {
+            margin-bottom: 0;
+        }
+
+        .tiles__more {
+            opacity: 1;
+        }
+    }
+
+}
+
+.tiles__link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: block;
+    z-index: 2;
+    overflow: hidden;
+}
+
+.tiles__viewport {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: block;
+    transform-origin: center;
+    transition: all ease $base-transition;
+    border-radius: $base-radius;
+    overflow: hidden;
+}
+
+.tiles__image {
+    display: block;
+
+    img {
+        display: block;
+    }
+}
+
+.tiles__triangle {
+    position: absolute;
+    z-index: 2;
+    bottom: -2px;
+    right: 0;
+    width: 50px;
+    height: 50px;
+    color: $purple;
+
+    @include media-query (min, $desk-start) {
+        width: 100px;
+        height: 100px;
+    }
+
+    @include media-query (min, $wide-start) {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+.tiles__triangle-arrow {
+    position: absolute;
+    z-index: 2;
+    bottom: $half-spacing;
+    right: $half-spacing;
+    width: 1em;
+    height: 1em;
+    color: $white;
+
+    @include media-query (min, $desk-start) {
+        bottom: $base-spacing;
+        right: $base-spacing;
+        width: 1.5em;
+        height: 1.5em;
+    }
+
+    @include media-query (min, $wide-start) {
+        bottom: ($base-spacing * 2);
+        right: ($base-spacing * 2);
+    }
+}
+
+.tiles__logo {
+    display: block;
+    color: $white;
+    position: absolute;
+    top: 0;
+    left: $base-spacing;
+    z-index: 1;
+    width: 100%;
+    max-width: 100px;
+    height: auto;
+
+    @include media-query (min, $lap-start) {
+        top: $base-spacing;
+        left: ($base-spacing * 2);
+        max-width: 150px;
+    }
+
+    @include media-query (min, $desk-start) {
+        left: ($base-spacing * 3);
+    }
+}
+
+.tiles__logo-svg {
+    display: block;
+    color: $white;
+    position: absolute;
+    top: $base-spacing;
+    left: $base-spacing;
+    z-index: 1;
+    width: 8em;
+    height: 4em;
+
+    @include media-query (min, $lap-start) {
+        top: ($base-spacing * 2);
+        left: ($base-spacing * 2);
+    }
+}
+
+.tiles__content {
+    color: $white;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: all ease $base-transition;
+    padding: $base-spacing;
+    text-align: left;
+    margin-bottom: -($base-spacing * 2.5);
+
+    @include media-query (min, $lap-start) {
+        padding: ($base-spacing * 2);
+    }
+}
+
+.tiles__title {
+    color: $white;
+    padding-top: 0;
+    @include font-size($lede-font-size);
+
+    @include media-query (min, $palm-start) {
+        @include font-size($h3-font-size);
+    }
+
+    @include media-query (min, $lap-start) {
+        @include font-size($h2-font-size);
+        margin-bottom: $half-spacing;
+    }
+}
+
+.tiles__author {
+    display: none;
+    font-weight: bold;
+    margin-bottom: $half-spacing;
+
+    @include media-query (min, $lap-start) {
+        display: block;
+    }
+}
+
+.tiles__desc {
+    display: none;
+    @include font-size($small-font-size);
+    margin-bottom: $half-spacing;
+
+    @include media-query (min, $lap-start) {
+        display: block;
+        @include font-size($base-font-size);
+    }
+}
+
+.tiles__more {
+    display: inline-block;
+    margin: 0;
+    transition: all ease $base-transition;
+    font-weight: bold;
+    line-height: ($base-spacing * 1.5);
+    @include font-size($small-font-size);
+    opacity: 0;
+
+    &:after {
+        content: '';
+        display: block;
+        margin-top: 2px;
+        width: 100%;
+        height: 2px;
+        background-color: $white;
+    }
+
+    @include media-query (min, $lap-start) {
+        @include font-size($base-font-size);
+    }
+
+}
+
+.tiles__spacer {
+    padding-bottom: 2/3 * 100%;
+    background-color: $silver;
+    border-radius: 10px;
+}
+
+
+//====================================
+// Size styles
+//====================================
+
+.tiles__item--large {
+    .tiles__spacer {
+        @include media-query (min, $desk-start) {
+            padding-bottom: 1/2 * 100%;
+        }
+    }
+
+    .tiles__image {
+        @include overlay(right);
+    }
+
+    @include media-query (min, $desk-start) {
+        .tiles__title {
+            @include font-size($h2-font-size);
+        }
+        .tiles__content {
+            max-width: 480px;
+            padding: ($base-spacing *3);
+        }
+    }
+}
+
+.tiles__item--small {
+    .tiles__spacer {
+        @include media-query (min, $lap-start) {
+            padding-bottom: 1/2 * 100%;
+        }
+
+        @include media-query (min, $desk-start) {
+            padding-bottom: 3/2 * 100%;
+        }
+    }
+
+    .tiles__image {
+        @include overlay(top);
+    }
+
+    @include media-query (min, $desk-start) {
+        width: calc(33.333% - (#{$base-spacing * 2} / 3));
+        margin-right: $base-spacing;
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+        .tiles__content {
+            //padding: $base-spacing;
+        }
+
+        .tiles__title {
+            @include font-size($h4-font-size);
+        }
+    }
+
+    @include media-query (min, $wide-start) {
+        .tiles__title {
+            @include font-size($h2-font-size);
+        }
+    }
+}
+
+//====================================
+// No Hovers
+//====================================
+
+@include media-query (max, $desk-start) {
+    body:not(.hasMouse) {
+        .tiles__content {
+            margin-bottom: 0;
+        }
+
+        .tiles__more {
+            opacity: 1;
+        }
+    }
+}

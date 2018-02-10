@@ -1,0 +1,13 @@
+/*================================================================================
+LINKS
+================================================================================*/
+
+a {
+    color: $link;
+    transition: background $base-transition ease, color $base-transition ease, border $base-transition ease;
+    text-decoration: none;
+
+    &:hover {
+        cursor: pointer;
+    }
+}

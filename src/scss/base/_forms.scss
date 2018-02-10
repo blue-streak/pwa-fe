@@ -1,0 +1,73 @@
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: $half-spacing;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+input,
+textarea,
+select {
+    padding: ($half-spacing - 1px) $base-spacing;
+    @include font-size($base-font-size);
+    line-height: $base-line-height;
+    border: none;
+    border-radius: $base-radius;
+    appearance: none;
+
+    &:hover, &:focus {
+        outline: none;
+    }
+}
+
+textarea {
+
+}
+
+.input-combined {
+    width: 100%;
+
+    @include media-query(min, $nav-start) {
+        display: flex;
+    }
+
+    input {
+        width: 100%;
+        margin-bottom: $half-spacing;
+
+        @include media-query(min, $nav-start) {
+            flex-grow: 0;
+            flex-basis: 100%;
+            border-radius: $base-radius 0 0 $base-radius;
+            margin-bottom: 0;
+        }
+    }
+
+    button {
+        @include media-query(min, $nav-start) {
+            flex-shrink: 0;
+            border-radius: 0 $base-radius $base-radius 0;
+        }
+    }
+}
+
+//purple alternative
+.input-combined--alt {
+    input {
+        border: 2px solid $purple;
+    }
+
+    button {
+        background-color: $purple;
+    }
+
+    button:hover,
+    button:active,
+    button:focus {
+        background-color: darken($purple, 11%)
+    }
+
+}

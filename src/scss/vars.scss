@@ -1,0 +1,104 @@
+@charset "UTF-8";
+/*========================================
+Paths
+========================================*/
+
+$font-path: "../fonts";
+$img-path: "../img";
+$svg-path: "../img/svg";
+$ajax-spinner: "../img/spinner.gif";
+
+
+/*========================================
+Colour
+========================================*/
+
+//Shade
+$black: #000000;
+$charcoal: #333333;
+$grey: #999999;
+$silver: #cccccc;
+$mercury: #F4F6F6;
+$white: #ffffff;
+
+//Brand
+$base-color: #4C3F4C;
+$red: #ED1F53;
+$yellow: #EEC718;
+$purple: #66256D;
+$purple-dk: #441549;
+$purple-lt: #c2a8c5;
+$sky: #E7EFF0;
+
+//Social
+$facebook: #3B5998;
+$twitter: #55ACEE;
+$instagram: #125688;
+
+
+
+/*========================================
+Typography
+========================================*/
+
+// Font stacks
+$sans: 'Akkurat', Tahoma, sans-serif;
+$sans-heading: 'Rutan', Tahoma, sans-serif;
+
+// Base
+$base-font-size: 18px;
+$base-line-height: 1.7;
+$line-height-ratio: (round(($base-line-height / $base-font-size) * 100)) / 100;
+$base-font-family: $sans;
+$link: $red;
+
+// Headings
+$hn-font-weight: normal;
+$hn-line-height: 1.25;
+$hn-font-family: $sans-heading;
+$hn-color: $base-color;
+$large-title: 60px;
+$h1-font-size: 50px;
+$h2-font-size: 30px;
+$h3-font-size: 24px;
+$h4-font-size: 22px;
+
+// Special
+$lede-font-size: 20px;
+$small-font-size: 16px;
+$micro-font-size: 13px;
+$uppercase-spacing: 0.05em;
+
+
+/*========================================
+Layout
+========================================*/
+
+// Dimensions
+$border-box: true;
+$base-spacing: 20px;
+$half-spacing: ceil($base-spacing / 2);
+
+$base-radius: 10px;
+$half-radius: ceil($base-radius / 2);
+
+$nav-height: 98px;
+$mob-nav-height: 73px;
+$nav-start: 680px;
+
+// Grids
+$page-width: 1210px;
+$palm-start: 420px;
+$lap-start: 680px;
+$desk-start: 850px;
+$wide-start: 1000px;
+
+$breakpoints: (
+        'palm' 0 $lap-start 4% (3, 4),
+        'lap' $lap-start $desk-start 4% (3, 4, 6, 8),
+        'desk' $desk-start $wide-start 2% (6, 8, 10, 12),
+        'wide' $wide-start 0 2% (6, 8, 10, 12)
+);
+$blockgrids: (2, 3, 4, 5, 8);
+
+$base-transition: .3s;

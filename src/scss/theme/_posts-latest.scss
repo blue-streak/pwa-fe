@@ -1,0 +1,215 @@
+.posts-latest {
+    background-color: $mercury;
+    padding-top: ($base-spacing * 2);
+    overflow: hidden;
+
+    @include media-query (min, $desk-start) {
+        padding-top: ($base-spacing * 3);
+    }
+
+}
+
+.posts-latest__container {
+    position: relative;
+
+    @include media-query (min, $desk-start) {
+        max-width: $wide-start;
+    }
+
+    svg {
+        color: $sky;
+
+        &:first-of-type {
+            position: absolute;
+            top: 0;
+            right: 0;
+            transform: translate(25%, -50%);
+            width: 400px;
+            height: 400px;
+
+            @include media-query(min, $desk-start) {
+                transform: translate(50%, -15%) rotate(20deg);
+                width: 600px;
+                height: 600px;
+            }
+        }
+
+        &:last-of-type {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            transform: translate(-25%, 40%) rotate(180deg);
+            width: 400px;
+            height: 400px;
+
+            @include media-query(min, $wide-start) {
+                width: 300px;
+                height: 300px;
+                transform: translate(-100%, -25%) rotate(90deg);
+            }
+        }
+    }
+}
+
+.posts-latest__title {
+    position: relative;
+    color: $red;
+    @include media-query (min, $lap-start) {
+        text-align: center;
+    }
+    @include media-query (min, $desk-start) {
+        @include font-size($large-title);
+        margin-bottom: ($base-spacing * 3);
+    }
+}
+
+.posts-latest__list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.posts-latest__item {
+    position: relative;
+    margin-bottom: $base-spacing;
+    padding: $base-spacing;
+    border-radius: $base-radius;
+    background-color: $white;
+
+    @include media-query (min, $desk-start) {
+        width: calc(50% - (#{$base-spacing}));
+        margin-right: ($base-spacing * 2);
+        margin-bottom: ($base-spacing * 2);
+
+        &:nth-child(even) {
+            margin-right: 0;
+        }
+    }
+
+    @include media-query (min, $wide-start) {
+        width: calc(50% - (#{$base-spacing} + #{$half-spacing}));
+        padding: 0;
+        margin-right: ($base-spacing * 3);
+        margin-bottom: ($base-spacing * 3);
+        transition: all ease $base-transition;
+        background-color: transparent;
+
+        &:before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            border-radius: $base-radius;
+            transition: all ease $base-transition;
+            transform: scale(1.1, 1.1);
+        }
+
+        &:nth-child(even) {
+            margin-right: 0;
+        }
+    }
+
+
+    &:hover {
+        &:before {
+            background-color: $white;
+            transform: scale(1.2, 1.2);
+            @include box-shadow;
+        }
+        .posts-latest__sub-title {
+            color: $red;
+        }
+        .posts-latest__more {
+            color: $red;
+        }
+    }
+
+    .post-tags {
+        display: none;
+        position: relative;
+        z-index: 3;
+        margin-top: $base-spacing;
+
+        @include media-query (min, $desk-start) {
+            display: block;
+        }
+    }
+}
+
+.posts-latest__link {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+}
+
+.posts-latest__sub-title,
+.posts-latest__excerpt,
+.posts-latest__more,
+.post-author {
+    position: relative;
+    z-index: 1;
+    margin-bottom: $half-spacing;
+}
+
+.posts-latest__sub-title {
+    padding-top: 0;
+    transition: all ease $base-transition;
+    color: $base-color;
+}
+
+.posts-latest__excerpt {
+    margin-bottom: 0;
+}
+
+.posts-latest__more {
+    display: inline-block;
+    margin: $half-spacing 0 0;
+    transition: all ease $base-transition;
+    font-weight: bold;
+    line-height: ($base-spacing * 1.5);
+    @include font-size($small-font-size);
+    color: $base-color;
+
+    &:after {
+        content: '';
+        display: block;
+        margin-top: 2px;
+        width: 100%;
+        height: 2px;
+        background-color: $red;
+    }
+
+    @include media-query (min, $lap-start) {
+        @include font-size($base-font-size);
+    }
+
+    @include media-query(min, $desk-start) {
+        display: none;
+    }
+}
+
+.posts-latest__actions {
+    @include media-query(min, $lap-start) {
+        text-align: center;
+    }
+}
+
+.posts-latest__button {
+    position: relative;
+    z-index: 1;
+    @include spacing;
+}
+
+//====================================
+// No Hovers
+//====================================
+
+@include media-query (max, $desk-start) {
+    body:not(.hasMouse) {
+    }
+}

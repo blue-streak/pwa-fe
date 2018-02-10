@@ -1,0 +1,19 @@
+/*========================================
+QUOTES
+========================================*/
+
+blockquote {
+    @include font-size($h3-font-size);
+    font-family: $hn-font-family;
+    padding-top: $base-spacing;
+    padding-left: ($base-spacing * 2);
+    margin-bottom: ($base-spacing + $half-spacing);
+    color: $purple;
+
+    @include media-query(min, $desk-start) {
+
+    }
+}
+blockquote + figcaption:before {
+    content: "-";
+}

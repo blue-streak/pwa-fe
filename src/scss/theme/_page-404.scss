@@ -1,0 +1,35 @@
+.page-404 {
+    @include spacing;
+}
+
+.page-404__container {
+    text-align: center;
+}
+
+.page-404__image {
+    position: relative;
+    z-index: 1;
+    border-radius: $base-radius;
+}
+
+.page-404__title {
+    color: $sky;
+    margin-top: -($base-spacing * 2);
+    margin-bottom: 0;
+    line-height: 1;
+    @include font-size(100px);
+
+    @include media-query (min, $lap-start) {
+        margin-top: -($base-spacing * 3);
+        @include font-size(200px);
+    }
+}
+
+.page-404__desc {
+    @include font-size($h3-font-size);
+    margin-bottom: $base-spacing;
+
+    @include media-query (min, $lap-start) {
+        @include font-size($h2-font-size);
+    }
+}

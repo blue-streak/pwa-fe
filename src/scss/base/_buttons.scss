@@ -1,0 +1,124 @@
+/*========================================
+BUTTONS
+========================================*/
+
+@mixin button {
+    display: inline-block;
+    border: 0;
+    padding: $half-spacing $base-spacing;
+    width: auto;
+    vertical-align: middle;
+    background-color: $red;
+    color: $white;
+    font-weight: bold;
+    @include font-size($base-font-size);
+    line-height: $base-line-height;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: $base-radius;
+    -webkit-font-smoothing: antialiased;
+    transition: all ease $base-transition;
+
+    &:hover,
+    &:focus {
+        outline: none;
+        color: $white;
+        background-color: darken($red, 10%);
+    }
+
+    &:active {
+
+    }
+}
+
+
+.button {
+    @include button;
+}
+
+/**
+ * Button Styles
+ */
+
+.button--bold {
+    @include button;
+    background-color: $purple;
+
+    &:hover,
+    &:focus {
+        color: $white;
+        background-color: $purple-dk;
+    }
+}
+
+.button--alt {
+    @include button;
+    background-color: $white;
+    border: 2px solid $white;
+    color: $red;
+
+    &:hover,
+    &:focus {
+        color: $white;
+        background-color: transparent;
+    }
+}
+
+.button--subtle {
+    @include button;
+    background-color: transparent;
+    border: 2px solid $white;
+    color: $white;
+
+    &:hover,
+    &:focus {
+        color: $red;
+        background-color: $white;
+    }
+}
+
+.button--icon {
+    height: 45px;
+    width: 45px;
+    position: relative;
+    padding: 0;
+    margin: 0;
+
+    .svg-icon {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        width: 1.2em;
+        height: 1.2em;
+    }
+}
+
+.button--icon-right,
+.button--icon-left {
+    position: relative;
+    .svg-icon {
+        position: absolute;
+        width: $base-spacing;
+        height: $base-spacing;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}
+
+.button--icon-left {
+    padding-left: ($base-spacing * 2) + $half-spacing;
+
+    .svg-icon {
+        left: $base-spacing;
+    }
+}
+
+.button--icon-right {
+    padding-right: ($base-spacing * 2) + $half-spacing;
+
+    .svg-icon {
+        right: $base-spacing;
+    }
+}

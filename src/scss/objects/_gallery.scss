@@ -1,0 +1,163 @@
+.gallery {
+    position: relative;
+    background-color: $mercury;
+    padding-top: ($base-spacing * 3);
+    padding-bottom: ($base-spacing * 3);
+    overflow: hidden;
+
+    svg {
+        &:first-of-type {
+            position: absolute;
+            top: -50px;
+            right: 0;
+            width: 200px;
+            height: 200px;
+            @include media-query(min, $lap-start) {
+                width: 400px;
+                height: 400px;
+                top: -100px;
+            }
+            @include media-query(min, $wide-start) {
+                width: 800px;
+                height: 800px;
+                top: -150px;
+            }
+        }
+
+        &:last-of-type {
+            position: absolute;
+            bottom: -25px;
+            left: 0;
+            width: 100px;
+            height: 100px;
+            @include media-query(min, $lap-start) {
+                width: 200px;
+                height: 200px;
+                bottom: -50px;
+            }
+            @include media-query(min, $wide-start) {
+                width: 300px;
+                height: 300px;
+                bottom: -75px;
+            }
+        }
+    }
+}
+
+.gallery__container {
+
+}
+
+.gallery--tablet {
+
+    .carousel__item {
+        width: 100%;
+        padding: 0 $base-spacing;
+
+        &:before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: $base-spacing;
+            right: ($base-spacing * 3);
+            bottom: $base-spacing;
+            left: ($base-spacing * 3);
+            box-shadow: 0px 0px 40px 20px rgba($black, 0.1);
+        }
+
+        @include media-query(min, $lap-start) {
+            padding: 0 ($base-spacing * 2);
+            width: 70%;
+        }
+    }
+}
+
+.gallery--mobile {
+    .carousel__item {
+        width: 70%;
+
+        &:before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 11%;
+            right: 10%;
+            bottom: 11%;
+            left: 10%;
+            box-shadow: 0px 0px 40px 20px rgba($black, 0.1);
+        }
+
+        @include media-query(min, $lap-start) {
+            width: 50%;
+        }
+
+        @include media-query(min, $desk-start) {
+            width: 33.3333%;
+        }
+
+        @include media-query(min, $wide-start) {
+            width: 25%;
+        }
+    }
+}
+
+
+.gallery--static {
+    padding-bottom: ($base-spacing * 3);
+}
+
+.gallery-static {
+
+}
+
+.gallery-static__picture {
+    display: block;
+}
+
+.gallery-static__image {
+    display: block;
+    width: 100%;
+}
+
+//Carousel
+.carousel {
+    .flickity-viewport {
+        overflow: visible;
+    }
+}
+
+.carousel__item {
+    position: relative;
+}
+
+.carousel__picture {
+    display: block;
+}
+
+.carousel__image {
+    position: relative;
+    z-index: 2;
+    display: block;
+}
+
+.carousel-overlay {
+    width: 70%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    z-index: 1;
+    pointer-events: none;
+
+    @include media-query(min, $lap-start) {
+        width: 50%;
+    }
+
+    @include media-query(min, $desk-start) {
+        width: 33.3333%;
+    }
+
+    @include media-query(min, $wide-start) {
+        width: 25%;
+    }
+}

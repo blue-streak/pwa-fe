@@ -1,0 +1,73 @@
+/*================================================================================
+SECTIONING
+================================================================================*/
+.site-body {
+    margin-top: -$mob-nav-height;
+
+    @include media-query (min, $lap-start) {
+        margin-top: -$nav-height;
+    }
+}
+
+.section-intro {
+    @include spacing;
+    max-width: $desk-start;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.section-title {
+    position: relative;
+    color: $purple;
+    margin-bottom: 0;
+    @include font-size($h2-font-size);
+
+    @include media-query (min, $lap-start) {
+        padding-top: 0;
+        text-align: center;
+        @include font-size($h1-font-size);
+    }
+}
+
+.section-desc {
+    margin-bottom: 0;
+    padding-top: $base-spacing;
+
+    @include media-query (min, $lap-start) {
+        text-align: center;
+    }
+}
+
+.wrapper {
+    clear: both;
+    width: 100%;
+}
+
+.wrapper--sliver {
+    background-color: $mercury;
+}
+
+
+.container {
+    margin: 0 auto;
+    padding-right: $base-spacing;
+    padding-left: $base-spacing;
+    width: auto;
+    max-width: $page-width;
+
+    @include media-query(min, $lap-start) {
+    }
+}
+
+.container--narrow {
+    max-width: 700px;
+}
+
+hr {
+    clear: both;
+    margin-bottom: $base-spacing;
+    border: none;
+    border-bottom: 1px solid $black;
+    padding-bottom: $half-spacing;
+    height: 1px;
+}

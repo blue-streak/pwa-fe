@@ -1,0 +1,82 @@
+//====================================
+// Default wp images
+//====================================
+
+//alignment
+img {
+  &.aligncenter,
+  &.alignleft,
+  &.alignright,
+  &.alignnone {
+    margin-top: $base-spacing;
+    margin-bottom: $base-spacing;
+    vertical-align: middle;
+    border-radius: $base-radius;
+  }
+}
+
+figure {
+  &.aligncenter,
+  &.alignleft,
+  &.alignright,
+  &.alignnone {
+    margin-top: $base-spacing;
+    margin-bottom: $base-spacing;
+    vertical-align: middle;
+    overflow: hidden;
+    border-radius: $base-radius;
+  }
+}
+
+figcaption {
+  font-size: $small-font-size;
+  text-align: center;
+  background-color: $white;
+  margin: 0;
+}
+
+//TODO remove importants. Put there to override wordpress width being applied to html.
+
+.aligncenter, .alignnone {
+  clear: both;
+  width: 100% !important;
+
+  @include media-query(min, $desk-start) {
+    width: calc(100% + (#{$base-spacing} * 6)) !important;
+    margin-left: -($base-spacing *3);
+  }
+}
+
+.alignleft {
+  float: left;
+  margin-right: $base-spacing * 2;
+  width: calc(50% - #{$base-spacing}) !important;
+
+  + .alignright {
+    margin-left: 0;
+  }
+
+  @include media-query(min, $desk-start) {
+    margin-left: -( $base-spacing * 3);
+    width: calc(50% + (#{$base-spacing} * 2)) !important;
+  }
+
+
+}
+
+.alignright {
+  float: right;
+  margin-left: $base-spacing * 2;
+  width: calc(50% - #{$base-spacing}) !important;
+
+  @include media-query(min, $desk-start) {
+    margin-right: -( $base-spacing * 3);
+    width: calc(50% + (#{$base-spacing} * 2)) !important;
+  }
+}
+
+//size
+
+
+
+

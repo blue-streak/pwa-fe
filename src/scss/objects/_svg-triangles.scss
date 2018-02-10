@@ -1,0 +1,71 @@
+.triangle-motif-right {
+    display: block;
+    width: 400px;
+    height: 400px;
+    position: absolute;
+    top: 0;
+    right: -10%;
+    color: $sky;
+
+    @include media-query (min, $desk-start) {
+        width: 600px;
+        height: 600px;
+        top: 0;
+        right: 0;
+        transform: translate(50%);
+    }
+}
+
+.triangle-motif-left {
+    display: block;
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    bottom: -$base-spacing;
+    right: $base-spacing;
+    color: $sky;
+
+    @include media-query (min, $desk-start) {
+        width: 400px;
+        height: 400px;
+        bottom: 0;
+        left: 0;
+        transform: translate(-50%) ;
+    }
+}
+
+.triangle-motif-right--alt {
+    display: block;
+    width: 400px;
+    height: 400px;
+    position: absolute;
+    top: 0;
+    left: -10%;
+    color: $sky;
+
+    @include media-query (min, $desk-start) {
+        width: 600px;
+        height: 600px;
+        top: 0;
+        left: 0;
+        transform: translate(-50%);
+    }
+}
+
+.triangle-motif-left--alt {
+    display: block;
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    bottom: -$base-spacing;
+    right: $base-spacing;
+    color: $sky;
+
+    @include media-query (min, $desk-start) {
+        width: 400px;
+        height: 400px;
+        bottom: 0;
+        right: 0;
+        transform: translate(50%) ;
+    }
+}

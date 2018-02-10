@@ -1,0 +1,36 @@
+.offline {
+    .site-footer__newsletter-form {
+        &:after {
+            content: 'Looks like you\'re offline, sorry but this form won\'t work';
+            display: block;
+            color: white;
+            margin-top: 10px;
+        }
+    }
+
+    .contact-location__map {
+        background-image: url('../img/offline-map.png');
+        background-size: cover;
+        background-position: center center;
+
+        * {
+           display: none;
+        }
+    }
+
+
+    &.nav-open {
+        position: static;
+        overflow: visible;
+
+        &:after {
+            display: none;
+        }
+    }
+
+    .site-nav {
+        @include media-query (max, $lap-start) {
+            display: none;
+        }
+    }
+}

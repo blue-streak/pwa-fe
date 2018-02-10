@@ -1,0 +1,25 @@
+.certified {
+  padding-top: $base-spacing;
+
+  @include media-query (min, $lap-start) {
+    padding-top: ($base-spacing * 2);
+  }
+
+  @include media-query (min, $desk-start) {
+    padding-top: ($base-spacing * 3);
+  }
+}
+
+.certified__container {
+
+}
+
+.certified {
+
+}
+
+.certified__icons {
+  display: block;
+  max-width: 540px;
+  margin: 0 auto;
+}

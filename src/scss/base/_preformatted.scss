@@ -1,0 +1,14 @@
+/*========================================
+PREFORMATTED
+========================================*/
+
+pre {
+    overflow: auto;
+    white-space: pre;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+    pre code,
+    pre samp {
+        line-height: 1.25;
+    }

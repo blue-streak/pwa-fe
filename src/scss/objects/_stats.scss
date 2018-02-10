@@ -1,0 +1,87 @@
+.stats {
+    background-color: $mercury;
+    padding-top: ($base-spacing * 2);
+
+    @include media-query(min, $lap-start) {
+        padding-top: ($base-spacing * 3);
+    }
+}
+
+.stats__container {
+
+}
+
+.stats__title {
+    text-align: center;
+    margin-bottom: ($base-spacing * 2);
+}
+
+.stats__list {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 0 auto;
+    max-width: $desk-start;
+}
+
+.stats__item {
+    position: relative;
+    width: 100%;
+    @include spacing;
+    text-align: center;
+
+    @include media-query(min, $palm-start) {
+        width: 50%
+    }
+
+    @include media-query(min, $lap-start) {
+        width: 33.3333%;
+    }
+
+    $num: 6;
+    @while $num > 0 {
+        &:nth-child(#{$num}) {
+            &:after {
+                content: '';
+                display: block;
+                position: absolute;
+                top: -$base-spacing;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 70px;
+                height: 70px;
+                background-image: url("../img/triangle-#{$num}.png");
+                background-size: contain;
+                opacity: 0.3;
+
+                @include media-query(min, $lap-start) {
+                    //width: 100px;
+                    //height: 100px;
+                }
+            }
+        }
+        $num: $num - 1;
+    }
+}
+
+.stats__figure {
+    position: relative;
+    z-index: 1;
+    @include font-size($h1-font-size);
+    font-family: $hn-font-family;
+    font-weight: bold;
+    line-height: 1.2;
+
+    @include media-query(min, $lap-start) {
+        @include font-size($large-title);
+    }
+}
+
+.stats__meta {
+    display: block;
+    clear: both;
+    @include font-size($small-font-size);
+    font-weight: normal;
+    position: relative;
+    z-index: 1;
+}

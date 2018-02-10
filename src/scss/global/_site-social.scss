@@ -1,0 +1,86 @@
+//===============================================
+// Social Links
+//===============================================
+
+.site-social {
+    padding-top: $half-spacing;
+    display: flex;
+}
+
+.site-social__link {
+    display: block;
+    position: relative;
+    transition: transform ease .3s;
+    width: ($base-spacing * 2);
+    height: ($base-spacing * 2);
+    margin-right: $half-spacing;
+    border-radius: 100%;
+    background-color: $white;
+
+    @include media-query(min, $wide-start) {
+        width: ($base-spacing * 2) + $half-spacing;
+        height: ($base-spacing * 2) + $half-spacing;
+    }
+
+    &:last-child {
+        margin-right: 0;
+    }
+
+    .svg-icon {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 1.2em;
+        height: 1.2em;
+        color: $base-color;
+
+        @include media-query(min, $wide-start) {
+            width: 1.5em;
+            height: 1.5em;
+        }
+    }
+
+    &:hover {
+        transform: scale(1.1);
+    }
+}
+
+
+//Social colours
+
+.site-social__link--facebook {
+    background-color: #3b5998;
+}
+
+.site-social__link--twitter {
+    background-color: #1da1f2;
+}
+
+.site-social__link--instagram {
+    background-color: #e1306c;
+}
+
+.site-social__link--github {
+    background-color: #333333;
+}
+
+.site-social__link--google-plus {
+    background-color: #dd4b39;
+}
+
+.site-social__link--linked-in {
+    background-color: #0077b5;
+}
+
+.site-social__link--facebook,
+.site-social__link--twitter,
+.site-social__link--instagram,
+.site-social__link--github,
+.site-social__link--google-plus,
+.site-social__link--linked-in {
+    .svg-icon {
+        color: $white;
+    }
+}
+

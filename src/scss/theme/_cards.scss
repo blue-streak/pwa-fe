@@ -1,0 +1,118 @@
+.cards {
+    text-align: center;
+}
+
+.cards--alt {
+    @include spacing;
+    padding-top: $base-spacing;
+    background-color: $mercury;
+
+    @include media-query (min, $lap-start) {
+        padding-top: ($base-spacing * 2);
+    }
+
+    @include media-query (min, $desk-start) {
+        padding-top: ($base-spacing * 3);
+    }
+
+    .cards__item {
+        padding: ($base-spacing + $half-spacing) $base-spacing $base-spacing;
+        background-color: $white;
+        border-radius: $base-radius;
+    }
+}
+
+.cards__container {
+
+}
+
+.cards__title {
+}
+
+.cards__desc {
+    font-weight: bold;
+    margin-bottom: $base-spacing;
+
+    @include media-query (min, $lap-start) {
+        @include font-size($lede-font-size);
+    }
+}
+
+.cards__list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.cards__item {
+    margin-bottom: $base-spacing;
+    width: 100%;
+
+    @include media-query (min, $desk-start) {
+        margin-bottom: ($base-spacing * 2);
+    }
+
+}
+
+.cards__list--3up {
+    .cards__item {
+        @include media-query (min, $desk-start) {
+            width: calc(33.3333% - (#{$base-spacing * 4}) / 3);
+            margin-right: ($base-spacing * 2);
+
+            &:nth-child(3n + 3) {
+                margin-right: 0;
+            }
+            &:nth-last-child(-n+3) {
+                margin-bottom: ($base-spacing * 3);
+            }
+        }
+    }
+}
+
+.cards__list--2up {
+    .cards__item {
+        @include media-query (min, $desk-start) {
+            width: calc(50% - #{$base-spacing});
+            margin-right: ($base-spacing * 2);
+
+            &:nth-child(2n + 2) {
+                margin-right: 0;
+            }
+        }
+    }
+}
+
+.cards__image {
+    display: block;
+    width: 100%;
+    max-width: 100px;
+    margin: 0 auto;
+
+    @include media-query (min, $lap-start) {
+        max-width: 200px;
+        margin: 0 auto $half-spacing;
+    }
+}
+
+.cards__image--smaller {
+    max-width: 100px;
+    @include media-query (min, $lap-start) {
+        max-width: 150px;
+    }
+}
+
+.cards__meta {
+    padding-bottom: $base-spacing;
+    background-color: $mercury;
+
+    @include media-query (min, $lap-start) {
+        padding-bottom: ($base-spacing * 2);
+        @include font-size($lede-font-size);
+    }
+
+    @include media-query (min, $desk-start) {
+        padding-bottom: ($base-spacing * 3);
+        @include font-size($h3-font-size);
+    }
+}
+

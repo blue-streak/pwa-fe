@@ -1,0 +1,54 @@
+.post-tags {
+    display: block;
+    width: 100%;
+
+    a {
+        display: inline-block;
+        margin-right: $half-spacing;
+        padding: 0 $half-spacing;
+        letter-spacing: 1px;
+        @include font-size($micro-font-size);
+        color: $base-color;
+        font-weight: bold;
+        text-transform: uppercase;
+        line-height: 1.8;
+        border: 2px solid $sky;
+        border-radius: $base-radius;
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+        &:hover, &:focus {
+            border-color: $red;
+            color: $red;
+            cursor: pointer;
+        }
+    }
+}
+
+.post-author {
+    display: block;
+    @include font-size($small-font-size);
+    font-weight: bold;
+    color: $grey;
+
+    img {
+        display: block;
+        margin: 0 auto $base-spacing;
+        width: 70px;
+        clear: both;
+        border-radius: 100%;
+    }
+}
+
+.post-author__link {
+    display: block;
+    margin: 0 auto;
+    width: 70px;
+    clear: both;
+}
+
+.post-author__meta {
+    margin: 0;
+}

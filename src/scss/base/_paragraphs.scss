@@ -1,0 +1,35 @@
+/*========================================
+PARAGRAPHS
+========================================*/
+p {
+    margin-bottom: $base-spacing;
+}
+
+.lede {
+    font-weight: bold;
+    @include media-query(min, $lap-start) {
+        margin-bottom: $base-spacing;
+        @include font-size($lede-font-size);
+    }
+}
+
+small,
+.small {
+    @include font-size($small-font-size);
+}
+
+
+.micro {
+    @include font-size($micro-font-size);
+}
+
+caption,
+.caption {
+    padding-top: ($half-spacing / 2);
+    margin-bottom: $half-spacing;
+    @include font-size($small-font-size);
+}
+
+address {
+    font-style: normal;
+}

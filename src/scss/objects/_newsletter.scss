@@ -1,0 +1,82 @@
+//====================================
+// Newsletter Sign up on archive page
+//====================================
+
+.newsletter {
+    background-color: $red;
+    padding: ($base-spacing * 2) 0;
+    @include spacing;
+
+    @include media-query (min, $desk-start) {
+        padding: ($base-spacing * 3) 0;
+    }
+}
+
+.newsletter__container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    @include media-query (min, $desk-start) {
+        flex-direction: row;
+    }
+}
+
+.newsletter__triangle-1 {
+    display: none;
+}
+
+.newsletter__triangle-2 {
+  display: none;
+}
+
+.newsletter__signup {
+    flex-grow: 1;
+}
+
+.newsletter__form {
+    margin: 0 auto;
+    width: 100%;
+    @include media-query (min, $lap-start) {
+        max-width: 560px;
+        text-align: center;
+    }
+}
+
+.newsletter__label {
+    color: $white;
+    font-weight: normal;
+    margin-bottom: $base-spacing;
+}
+
+.newsletter__input {
+
+}
+
+.newsletter__title {
+    flex-shrink: 0;
+    color: $white;
+    line-height: 1;
+    @include font-size($h2-font-size);
+    font-family: $hn-font-family;
+
+    @include media-query (min, $lap-start) {
+        text-align: center;
+    }
+
+    @include media-query (min, $desk-start) {
+        padding-right: ($base-spacing * 2);
+        @include font-size($large-title);
+        text-align: left;
+    }
+
+    strong {
+        @include media-query (min, $desk-start) {
+            display: block;
+        }
+    }
+
+    p {
+        margin-bottom: 0;
+    }
+}
