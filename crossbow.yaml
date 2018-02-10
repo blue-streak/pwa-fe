@@ -1,21 +1,36 @@
 tasks:
 
+  start:
+    - '@npm node index'
+
+  build-all:
+    - build
+    - app-shell
+
   build:
-    adaptor: npm
-    command: |
-      rm -rf dist/**
-      parcel build src/index.html --public-url /
-
+    description: |
+      Run the parcel bundler to create the production-ready assets
+    tasks:
+      - adaptor: npm
+        command: |
+          rm -rf dist/**
+          parcel build src/index.html --public-url /
   serve:
-    adaptor: npm
-    env:
-      NODE_ENV: production
-    command: node index
+    description: |
+      Serve the dist folder (note: this will set `NODE_ENV=production`)
+    tasks:
+      - adaptor: npm
+        env:
+          NODE_ENV: production
+        command: node index
 
-  render:
-    - render-clean
-    - render-ts
-    - render-output
+  app-shell:
+    description: |
+      Render the App shell. Alias for `render-clean render-ts render-output`
+    tasks:
+      - render-clean
+      - render-ts
+      - tasks/shell.js
 
   render-clean:
     adaptor: npm
