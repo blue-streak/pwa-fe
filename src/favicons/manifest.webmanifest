@@ -25,7 +25,7 @@
     ],
     "theme_color": "#ed1f53",
     "background_color": "#ed1f53",
-    "start_url": "https://wearejh.com/",
+    "start_url": "/",
     "display": "standalone",
     "orientation": "portrait"
 }
