@@ -9,10 +9,12 @@ export function Shell(props: {title: string}) {
     return (
         <div>
             <Header />
-            <Router>
-                <Home path="/"/>
-                <NotFound default/>
-            </Router>
+            <main class="wrapper site-main">
+                <Router>
+                    <Home path="/"/>
+                    <NotFound default/>
+                </Router>
+            </main>
             <Footer />
         </div>
     );

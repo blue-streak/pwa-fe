@@ -54,9 +54,6 @@ SECTIONING
     padding-left: $base-spacing;
     width: auto;
     max-width: $page-width;
-
-    @include media-query(min, $lap-start) {
-    }
 }
 
 .container--narrow {

@@ -26,6 +26,11 @@ tasks:
           NODE_ENV: production
         command: node index
 
+  lighthouse:
+    - adaptor: npm
+      command: |
+        lighthouse http://localhost:1234 --headless --view
+
   app-shell:
     description: |
       Render the App shell. Alias for `render-clean render-ts render-output`

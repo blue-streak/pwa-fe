@@ -4,14 +4,13 @@
 
 .site-header {
     position: relative;
-    padding: $half-spacing 0;
+    //padding: $half-spacing 0;
     z-index: 4;
-    background: $red;
-}
+    background: $purple-dk;
 
-.site-header__container {
-    display: flex;
-    align-items: center;
+    @include media-query(min, $lap-start) {
+        padding: 0 0;
+    }
 }
 
 .site-header__brand {
@@ -21,22 +20,25 @@
     position: relative;
     z-index: 3;
     width: 100%;
+    padding: $half-spacing;
 
-    @include media-query (min, $nav-start) {
-        width: auto;
-        top: $half-spacing;
+    max-width: $page-width;
+    margin-left: auto;
+    margin-right: auto;
+
+    @include media-query(min, $lap-start) {
+        padding-top: $base-spacing;
+        padding-bottom: $base-spacing;
     }
 }
 
-.site-header__menu {
-    //margin-left: auto;
+@mixin header-icon {
+    height: 45px;
+    position: relative;
+    padding: 0;
+    margin: 0;
     background-color: transparent;
-    //border: 2px solid $white;
-    //color: $white;
-    //border-radius: ($base-spacing + $half-spacing);
-    //padding-top: ($half-spacing / 2);
-    //padding-bottom: ($half-spacing / 2);
-
+    border-radius: $base-radius;
 
     &:hover,
     &:focus {
@@ -46,35 +48,39 @@
     }
 
     &:active {
-        background-color: transparent;
-    }
-
-    @include media-query (min, $nav-start) {
-        display: none;
-    }
-
-    &.active {
-        .svg-icon {
-        }
+        background-color: $purple;
     }
 }
 
+.site-header__menu {
+    @include header-icon;
+    width: 45px;
+    .svg-icon {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        width: 1.2em;
+        height: 1.2em;
+    }
+
+    @include media-query(min, $lap-start) {
+        display: none;
+    }
+}
 
 .site-header__logo {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
 }
+
 .site-header__logo__svg {
     width: 45px;
     height: 50px;
     color: $white;
-
-    @include media-query (min, $nav-start) {
-        width: 75px;
-        height: 78px;
-    }
 }
+
 .site-header__logo__label {
     position: absolute;
     bottom: 0;
@@ -88,6 +94,19 @@
 
 .site-header__cart {
     color: $white;
+    @include header-icon;
+    display: flex;
+    align-items: center;
+    padding: 0 $half-spacing;
+
+    .svg-icon {
+        width: 1.2em;
+        height: 1.2em;
+    }
+
+    @include media-query(min, $lap-start) {
+        margin-left: auto;
+    }
 }
 
 .site-header__cart__svg {
@@ -97,9 +116,7 @@
     }
 }
 .site-header__cart__label {
-    position: absolute;
-    right: 0;
     @include font-size(10px);
-    top: 50%;
-    transform: translateY(-50%);
+    display: inline-block;
+    padding-left: $half-spacing/2;
 }

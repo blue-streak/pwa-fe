@@ -1,5 +1,5 @@
 let proxy = require('http-proxy-middleware');
-let express = require('express');
+let express = require('express-http2');
 let app = express();
 
 app.use(

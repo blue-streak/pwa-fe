@@ -1,7 +1,7 @@
 import {h} from 'preact';
 import {Store} from "../components/Store";
 import {HerosState, IHerosItem} from "./heros.register";
-import {LoadingSvg} from "../components/icons/LinkedIn";
+import {LoadingSvg} from "../components/icons/Svg";
 
 export function Heros() {
     return (

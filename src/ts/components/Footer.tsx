@@ -1,5 +1,5 @@
 import {h} from 'preact';
-import {Github, Twitter} from "./icons/LinkedIn";
+import {Github, Twitter} from "./icons/Svg";
 
 export function Footer() {
     return (

@@ -1,0 +1,7 @@
+.route-home {
+
+    @include media-query(min, $lap-start) {
+        margin: 0 auto;
+        max-width: $page-width;
+    }
+}
