@@ -13,12 +13,16 @@
     "create-epic-store": "1.0.9",
     "dlv": "^1.1.1",
     "express-http2": "^4.13.4",
+    "html-minifier": "^3.5.9",
+    "htmlparser2": "^3.9.2",
+    "http2": "^3.3.7",
     "preact": "^8.2.7",
     "preact-redux": "^2.0.3",
     "preact-router": "^2.6.0",
     "redux": "^3.7.2",
     "redux-observable": "^0.18.0",
-    "rxjs": "^5.5.6"
+    "rxjs": "^5.5.6",
+    "spdy": "^3.4.7"
   },
   "devDependencies": {
     "compression": "^1.7.1",
@@ -28,8 +32,10 @@
     "lighthouse": "^2.9.0",
     "node-sass": "^4.7.2",
     "parcel-bundler": "^1.5.1",
+    "parcel-plugin-bundle-manifest": "^0.1.0",
     "preact-render-to-string": "^3.7.0",
     "serve-static": "^1.13.2",
-    "typescript": "^2.7.1"
+    "typescript": "^2.7.1",
+    "workbox-cli": "^2.1.2"
   }
 }

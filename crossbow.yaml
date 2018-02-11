@@ -6,6 +6,12 @@ tasks:
   build-all:
     - build
     - app-shell
+    - sw
+
+  sw:
+    adaptor: npm
+    command: |
+      workbox inject:manifest
 
   build:
     description: |
