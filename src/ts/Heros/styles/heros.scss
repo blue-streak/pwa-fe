@@ -1,0 +1,24 @@
+.hero {
+    height: 0;
+    padding-bottom: 56.25%;
+    position: relative;
+    margin-bottom: 0;
+    border-bottom: 1px solid $purple-lt;
+}
+
+.hero__subject {}
+.hero__subject--loading {
+    width: 2em;
+    height: 2em;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+}
+
+.hero__link {
+    position: absolute;
+    bottom: $base-spacing;
+    right: $base-spacing;
+    background: rgba(0,0,0,.6);
+}

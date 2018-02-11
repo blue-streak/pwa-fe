@@ -15,6 +15,8 @@ tasks:
         command: |
           rm -rf dist/**
           parcel build src/index.html --public-url /
+          cp -R src/favicons dist/favicons
+          cp -R src/stubs dist/stubs
   serve:
     description: |
       Serve the dist folder (note: this will set `NODE_ENV=production`)
@@ -46,4 +48,4 @@ tasks:
 
   render-output:
     adaptor: sh
-    command: node render/dist/render/index.js
+    command: node renderSubject/dist/renderSubject/index.js

@@ -1,0 +1,34 @@
+{
+  "data": {
+    "heros": [
+      {
+        "id": "hero-id",
+        "link": {
+          "label": "Shop Now",
+          "url": "/"
+        },
+        "image": {
+          "large": {
+            "url": "http://ce.demo.wearejh.com/media/wysiwyg/new/new-performance.jpg",
+            "height": 372,
+            "width": 580
+          }
+        }
+      },
+      {
+        "id": "hero-id",
+        "link": {
+          "label": "Shop Now",
+          "url": "/"
+        },
+        "image": {
+          "large": {
+            "url": "http://ce.demo.wearejh.com/media/wysiwyg/new/new-eco.jpg",
+            "height": 372,
+            "width": 580
+          }
+        }
+      }
+    ]
+  }
+}

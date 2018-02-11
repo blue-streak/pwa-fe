@@ -103,19 +103,3 @@
     top: 50%;
     transform: translateY(-50%);
 }
-
-.hero {
-    height: 0;
-    padding-bottom: 56.25%;
-    position: relative;
-    margin-bottom: 0;
-}
-
-.hero__link {
-    position: absolute;
-    bottom: $base-spacing;
-    right: $base-spacing;
-    background: rgba(0,0,0,.6);
-
-    //padding: 5px 10px;
-}
