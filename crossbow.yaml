@@ -11,7 +11,7 @@ tasks:
   sw:
     adaptor: npm
     command: |
-      workbox inject:manifest
+      workbox injectManifest workbox-cli-config.js
 
   build:
     description: |

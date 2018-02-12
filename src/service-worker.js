@@ -1,10 +1,10 @@
 // TODO: Replace Xs.
-importScripts('/node_modules/workbox-sw/build/importScripts/workbox-sw.dev.v2.1.2.js');
+importScripts('https://storage.googleapis.com/workbox-cdn/releases/3.0.0-beta.0/workbox-sw.js');
 
-// Note: Ignore the error that Glitch raises about WorkboxSW being undefined.
-const workbox = new WorkboxSW({
-    skipWaiting: true,
-    clientsClaim: true
+workbox.setConfig({
+    debug: true
 });
+workbox.skipWaiting();
+workbox.clientsClaim();
 
-workbox.precache([]);
+workbox.precaching.precacheAndRoute([])
