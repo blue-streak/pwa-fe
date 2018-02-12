@@ -5,12 +5,14 @@ import {Shell} from "./Shell";
 import {of} from "rxjs/observable/of";
 import {routeRegister} from "./route-register";
 import {registerGlobal} from "./global";
+import {registerNav} from "./nav";
 
 const store = configureStore({}, [], {
     document$: of(document)
 });
 
 store.register(routeRegister());
+store.register(registerNav());
 store.register(registerGlobal());
 
 render((

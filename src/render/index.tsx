@@ -6,6 +6,7 @@ import {configureStore} from "../ts/configureStore";
 import {of} from "rxjs/observable/of";
 import {routeRegister} from "../ts/route-register";
 import {registerGlobal} from "../ts/global";
+import {registerNav} from "../ts/nav";
 
 declare global {
     namespace JSX {
@@ -21,6 +22,7 @@ export function render() {
     });
 
     store.register(routeRegister());
+    store.register(registerNav());
     store.register(registerGlobal());
 
     return renderHtml((

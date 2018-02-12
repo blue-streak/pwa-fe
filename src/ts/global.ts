@@ -17,7 +17,7 @@ export interface GlobalState {
 
 const initialState: GlobalState = {
     menu: { open: false }
-}
+};
 
 export function globalReducer(prev: GlobalState = initialState, action): GlobalState {
     switch(action.type) {
