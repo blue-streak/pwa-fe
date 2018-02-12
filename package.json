@@ -10,12 +10,15 @@
     "build": "cb build"
   },
   "dependencies": {
+    "classnames": "^2.2.5",
     "create-epic-store": "1.0.9",
     "dlv": "^1.1.1",
+    "express-history-api-fallback": "^2.2.1",
     "express-http2": "^4.13.4",
     "html-minifier": "^3.5.9",
     "htmlparser2": "^3.9.2",
     "http2": "^3.3.7",
+    "parcel-plugin-typescript": "^0.6.0",
     "preact": "^8.2.7",
     "preact-redux": "^2.0.3",
     "preact-router": "^2.6.0",

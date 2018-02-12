@@ -1,4 +1,5 @@
 let proxy = require('http-proxy-middleware');
+const fallback = require('express-history-api-fallback');
 let express = require('express-http2');
 let app = express();
 
@@ -16,9 +17,13 @@ if (process.env.NODE_ENV !== "production") {
     app.use('/service-worker.js', require('serve-static')('src/service-worker.js'));
     app.use(bundler.middleware());
 } else {
+
+    /** PRODUCTION **/
     app.use(require('compression')());
     app.use(require('serve-static')('dist'));
-    app.use('/node_modules', require('serve-static')('node_modules'));
+
+    const root = `${__dirname}/dist`;
+    app.use(fallback('index.html', { root: root }))
 }
 
 app.listen(Number(process.env.PORT || 1234));
