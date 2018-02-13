@@ -5,7 +5,6 @@ tasks:
 
   build-all:
     - build
-    - app-shell
     - sw
 
   sw:
@@ -17,10 +16,11 @@ tasks:
     description: |
       Run the parcel bundler to create the production-ready assets
     tasks:
+      - app-shell
       - adaptor: npm
         command: |
           rm -rf dist/**
-          parcel build src/index.html --public-url /
+          node build.js
           cp -R src/favicons dist/favicons
           cp -R src/stubs dist/stubs
   serve:
@@ -37,13 +37,18 @@ tasks:
       command: |
         lighthouse http://localhost:1234 --headless --view
 
+  build-icons:
+    tasks: 'tasks/icons.js'
+    options:
+      input: src/svg/*.svg
+      output: src/icons
+
   app-shell:
     description: |
       Render the App shell. Alias for `render-clean render-ts render-output`
     tasks:
       - render-clean
       - render-ts
-      - tasks/shell.js
 
   render-clean:
     adaptor: npm

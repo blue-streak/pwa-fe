@@ -10,6 +10,7 @@
     "build": "cb build"
   },
   "dependencies": {
+    "@types/node": "8",
     "classnames": "^2.2.5",
     "create-epic-store": "1.0.9",
     "dlv": "^1.1.1",
@@ -30,6 +31,7 @@
   "devDependencies": {
     "compression": "^1.7.1",
     "crossbow": "^4.3.0",
+    "easy-svg": "^1.1.0",
     "express": "^4.16.2",
     "http-proxy-middleware": "^0.17.4",
     "lighthouse": "^2.9.0",
@@ -39,6 +41,7 @@
     "preact-render-to-string": "^3.7.0",
     "serve-static": "^1.13.2",
     "typescript": "^2.7.1",
+    "vinyl-fs": "2.4.4",
     "workbox-cli": "beta"
   }
 }

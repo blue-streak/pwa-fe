@@ -1,5 +1,5 @@
 import { connect } from 'preact-redux';
-import dlv = require('dlv');
+import * as dlv from 'dlv';
 
 const WithStore = (props) => {
     if (props.render) {

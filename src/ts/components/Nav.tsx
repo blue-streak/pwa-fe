@@ -1,6 +1,6 @@
 import {h} from 'preact';
 const classnames = require('classnames');
-import {Github, Twitter} from "./icons/Svg";
+import {Icon} from "./icons/Svg";
 
 export function Nav(props: {open: boolean}, {store}) {
     const classes = classnames({
@@ -17,10 +17,10 @@ export function Nav(props: {open: boolean}, {store}) {
             </ul>
             <div class="site-social">
                 <a class="site-social__link site-social__link--twitter" href="https://twitter.com/wearejh/">
-                    <Twitter />
+                    <Icon name="twitter" />
                 </a>
                 <a class="site-social__link site-social__link--github" href="https://github.com/wearejh/">
-                    <Github />
+                    <Icon name="github" />
                 </a>
             </div>
         </nav>

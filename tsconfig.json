@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "jsx": "react",
+    "target": "es2016",
     "jsxFactory": "h",
     "lib": ["DOM", "ES2015"]
   }

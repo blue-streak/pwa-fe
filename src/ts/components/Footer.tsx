@@ -1,5 +1,5 @@
 import {h} from 'preact';
-import {Github, Twitter} from "./icons/Svg";
+import {Icon} from "./icons/Svg";
 
 export function Footer() {
     return (
@@ -10,8 +10,8 @@ export function Footer() {
                     <a class="site-footer__contact-link" href="Tel:+44(0)115 933 8790">+44(0)115 933 8790</a>
 
                     <div class="site-social">
-                        <a class="site-social__link" href="https://twitter.com/wearejh/"><Twitter /></a>
-                        <a class="site-social__link" href="https://github.com/wearejh/"><Github /></a>
+                        <a class="site-social__link" href="https://twitter.com/wearejh/"><Icon name="twitter" /></a>
+                        <a class="site-social__link" href="https://github.com/wearejh/"><Icon name="github" /></a>
                     </div>
                 </div>
             </div>

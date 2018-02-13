@@ -1,6 +1,5 @@
 import {h, Component} from 'preact';
-import {Github, Menu, Twitter} from "./icons/Svg";
-import {Global, GlobalState} from "../global";
+import {GlobalState} from "../global";
 import {HeaderBrand} from "./HeaderBrand";
 import {Nav} from "./Nav";
 import {Store} from "./Store";
