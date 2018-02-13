@@ -5,6 +5,7 @@ export type IconNames = "twitter" | "github" | "logo" | "menu" | "cart";
 export function Icon(props: {name: IconNames, className?: string}) {
     return (
         <svg class={`svg-icon ${props.className ? props.className : ''}`}>
+            <title>{props.name}</title>
             <use xlinkHref={`#svg-${props.name}`} />
         </svg>
     )
