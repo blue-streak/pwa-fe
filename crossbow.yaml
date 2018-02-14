@@ -23,6 +23,7 @@ tasks:
           node build.js
           cp -R src/favicons dist/favicons
           cp -R src/stubs dist/stubs
+          cp -R src/img dist/img
   serve:
     description: |
       Serve the dist folder (note: this will set `NODE_ENV=production`)

@@ -15,6 +15,8 @@ if (process.env.NODE_ENV !== "production") {
     let Bundler = require('parcel-bundler');
     let bundler = new Bundler('src/index.html');
     app.use('/service-worker.js', require('serve-static')('src/service-worker.js'));
+    app.use('/stubs', require('serve-static')('src/stubs'));
+    app.use('/img', require('serve-static')('src/img'));
     app.use(bundler.middleware());
 } else {
 

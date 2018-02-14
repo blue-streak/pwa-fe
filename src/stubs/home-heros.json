@@ -4,28 +4,28 @@
       {
         "id": "hero-id",
         "link": {
-          "label": "Shop Now",
+          "label": "Clothing",
           "url": "/"
         },
         "image": {
           "large": {
-            "url": "http://ce.demo.wearejh.com/media/wysiwyg/new/new-performance.jpg",
-            "height": 372,
-            "width": 580
+            "url": "/img/3D-Triangles-copy.png",
+            "height": 449,
+            "width": 800
           }
         }
       },
       {
         "id": "hero-id",
         "link": {
-          "label": "Shop Now",
+          "label": "Stationery",
           "url": "/"
         },
         "image": {
           "large": {
-            "url": "http://ce.demo.wearejh.com/media/wysiwyg/new/new-eco.jpg",
-            "height": 372,
-            "width": 580
+            "url": "/img/Notebook-copy.jpg",
+            "height": 455,
+            "width": 800
           }
         }
       }

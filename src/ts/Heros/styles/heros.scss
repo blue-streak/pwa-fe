@@ -6,7 +6,10 @@
     border-bottom: 1px solid $purple-lt;
 }
 
-.hero__subject {}
+.hero__subject {
+    max-width: 100%;
+}
+
 .hero__subject--loading {
     width: 2em;
     height: 2em;

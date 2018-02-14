@@ -7,6 +7,7 @@ import {of} from "rxjs/observable/of";
 import {routeRegister} from "../ts/route-register";
 import {registerGlobal} from "../ts/global";
 import {registerNav} from "../ts/nav";
+import {async} from "rxjs/scheduler/async";
 
 declare global {
     namespace JSX {
@@ -18,7 +19,8 @@ declare global {
 
 export function render() {
     const store = configureStore({}, [], {
-        document$: of({})
+        document$: of({}),
+        ajax: () => of({}).subscribeOn(async)
     });
 
     store.register(routeRegister());

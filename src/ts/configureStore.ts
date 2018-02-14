@@ -5,6 +5,7 @@ import "rxjs/add/operator/ignoreElements";
 import "rxjs/add/operator/switchMap";
 import "rxjs/add/operator/map";
 import "rxjs/add/operator/withLatestFrom";
+import "rxjs/add/operator/subscribeOn";
 import "rxjs/add/observable/of";
 import {register} from "./Heros/heros.register";
 import {toggleMenu} from "./effects/toggleMenu.dom.effect";
