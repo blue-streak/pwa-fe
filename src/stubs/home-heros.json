@@ -2,7 +2,7 @@
   "data": {
     "heros": [
       {
-        "id": "hero-id",
+        "id": "hero-id-01",
         "link": {
           "label": "Clothing",
           "url": "/"
@@ -16,7 +16,7 @@
         }
       },
       {
-        "id": "hero-id",
+        "id": "hero-id-02",
         "link": {
           "label": "Stationery",
           "url": "/"
