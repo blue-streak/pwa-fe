@@ -7,7 +7,7 @@
   "license": "MIT",
   "scripts": {
     "start": "cb start",
-    "build": "cb build"
+    "build-all": "cb build-all"
   },
   "dependencies": {
     "@types/node": "8",
