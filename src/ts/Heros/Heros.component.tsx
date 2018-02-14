@@ -10,7 +10,7 @@ export function Heros() {
             render={(heros: HerosState) => {
                 if (heros.loading) {
                     return (
-                        <div>
+                        <div class="heroes">
                             <Hero
                                 key={"blank-01"}
                                 renderSubject={(className) => <LoadingSvg className={`${className} ${className}--loading`}/> }
@@ -23,7 +23,7 @@ export function Heros() {
                     )
                 }
                 return (
-                    <div>
+                    <div class="heroes">
                         {heros.data.map((hero: IHerosItem) => {
                             return (
                                 <Hero

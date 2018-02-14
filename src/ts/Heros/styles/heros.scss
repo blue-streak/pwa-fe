@@ -1,9 +1,18 @@
+.heroes {
+    max-width: 800px;
+    margin: 0 auto;
+    @include media-query(min, $nav-start) {
+        //display: flex;
+        //width: 50%;
+    }
+}
 .hero {
     height: 0;
     padding-bottom: 56.25%;
     position: relative;
     margin-bottom: 0;
     border-bottom: 1px solid $purple-lt;
+    max-width: 800px;
 }
 
 .hero__subject {
