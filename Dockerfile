@@ -3,7 +3,9 @@ FROM node:8 as build-deps
 WORKDIR /usr/src/app
 COPY package.json yarn.lock ./
 RUN yarn
-COPY . ./
+COPY src ./src
+COPY tasks ./tasks
+COPY crossbow.yaml index.js parcel-plugin-render.js tsconfig.json workbox-cli-config.js build.js .htmlnanorc.js ./
 RUN yarn build-all
 
 # Stage 2 - the production environment
