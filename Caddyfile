@@ -6,4 +6,15 @@ pwa.m2:443 {
     rewrite {
         to {path} {path}/ /
     }
+
+    proxy /graphql http://api {
+        transparent
+    }
+}
+
+shop.pwa.m2:443 {
+    proxy / http://entry {
+        transparent
+    }
+    tls self_signed
 }
