@@ -1,0 +1,9 @@
+pwa.m2:443 {
+    root /srv
+    gzip
+    tls self_signed
+
+    rewrite {
+        to {path} {path}/ /
+    }
+}
