@@ -37,7 +37,7 @@ RUN /usr/bin/caddy -version
 RUN /usr/bin/caddy -plugins
 
 EXPOSE 80 443
-VOLUME /root/.caddy /srv
+VOLUME /root/.caddy
 WORKDIR /srv
 
 COPY Caddyfile.prod /etc/Caddyfile
