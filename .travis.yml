@@ -9,8 +9,16 @@ env:
 services:
   - docker
 
+before_script:
+  - docker pull $REPO:latest
+
 script:
-  - docker build -f Dockerfile -t $REPO:$COMMIT .
+  - >
+    docker build
+    -f Dockerfile
+    -t $REPO:$COMMIT
+    --cache-from $REPO:latest
+    .
 
 after_success:
   - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
