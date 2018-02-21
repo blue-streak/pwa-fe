@@ -1,0 +1,20 @@
+m2-pwa.tk:443 {
+    root /srv
+    gzip
+    tls shane.osbourne8@gmail.com
+
+    rewrite {
+        to {path} {path}/ /
+    }
+
+    proxy /graphql http://api {
+        transparent
+    }
+}
+
+shop.m2-pwa.tk:443 {
+    proxy / http://entry {
+        transparent
+    }
+    tls shane.osbourne8@gmail.com
+}

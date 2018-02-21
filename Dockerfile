@@ -40,7 +40,7 @@ EXPOSE 80 443
 VOLUME /root/.caddy /srv
 WORKDIR /srv
 
-COPY Caddyfile /etc/Caddyfile
+COPY Caddyfile.prod /etc/Caddyfile
 COPY --from=build-deps /usr/src/app/dist /srv
 
 ENTRYPOINT ["/usr/bin/caddy"]
