@@ -13,7 +13,7 @@ m2-pwa.tk:443 {
 }
 
 shop.m2-pwa.tk:443 {
-    proxy / http://entry {
+    proxy / http://mage {
         transparent
     }
     tls shane.osbourne8@gmail.com
